@@ -1,0 +1,9 @@
+git clone https://github.com/lucianlavric/dotfiles
+cd dotfiles
+brew bundle
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.Dock autohide -bool true
+defaults write com.apple.Dock autohide-delay -float 1000
+defaults write com.apple.universalaccess reduceMotion -bool true
+killall SystemUIServer
+killall Dock
