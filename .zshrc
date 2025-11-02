@@ -104,6 +104,20 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+alias python=python3
+
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/hul10.omp.json)"
 
+quickgit() {
+  if [ -z "$1" ]; then
+    echo "Usage: quickgit <repo-name>"
+    return 1
+  fi
 
+  git init
+  git add .
+  git commit -m "Initial commit"
+  gh repo create "$1" --public --source=. --remote=origin --push
+}
+
+alias guardian='ssh -i /Users/lukalavric/Desktop/GuardianKey.pem linux1@148.100.85.139'
